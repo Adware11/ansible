@@ -1,0 +1,35 @@
+- name: Deploy containers
+  hosts: appsrvgrp #// Группа, которую нужно будет прописать в Inventory
+  become: yes
+  tasks:
+    - name: Create remote temp dir #// Создать папку для временных файлов на целевой машине
+      file:
+        path: /tmp/vproapp
+        state: directory
+    - name: Copy Docker Compose files #// Приземлить шаблон и скопировать его
+      template:
+        src: templates/docker-compose.j2
+        dest: /tmp/vproapp/docker-compose.yml
+
+    - name: Stop all docker containers #// Останавливаем все докер-контейнеры
+      shell:
+        cmd: docker ps -aq
+      ignore_errors: true
+      tags:
+        - docker-cleanup
+    - name: Remove all unused and dangling docker images #// Удаляем их
+      shell:
+        cmd: docker system prune --all --force
+      tags:
+        - docker-cleanup
+    - name: Setup with docker-compose #// Поднимаем контейнеры
+      shell:
+        cmd: docker compose up -d
+        chdir: /tmp/vproapp
+      register: contdeploy
+      tags:
+        - container-setup
+    - name: Display result #// Выводим журнал в консоль,
+                         # // чтоб был виден в Jenkins
+      debug:
+        msg: "Log from docker-compose: \n {{contdeploy}}\n"

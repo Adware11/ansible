@@ -1,0 +1,36 @@
+version: '3'
+services:
+  vprodb:
+    image: {{nexus_host}}:{{nexus_docker_port}}/{{nexus_docker_repo}}/vprobdb:V2
+    ports:
+      - "3306:3306"
+    volumes:
+      - vprobdata:"/var/lib/mysql"
+    environment:
+      - "MYSQL_ROOT_PASSWORD={{mysql_root_pass}}"
+  vprocache01: 
+    image: memcached
+    ports:
+      - "11211:11211"
+  vpromq01: 
+    image: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER test
+      - RABBITMQ_DEFAULT_PASS test
+  vproapp:
+    image: vprofile/vprofileapp:V1
+    ports:
+      - "8080:8080"
+    volumes:
+      - vproappdata:/usr/local/tomcat/webapps
+  vproweb:
+    image: vprofile/vprofileweb:V1
+    ports:
+      - "80:80"
+volumes:
+  vprodbdata: 
+  vproappdata: 
+

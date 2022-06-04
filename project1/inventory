@@ -1,0 +1,16 @@
+[appsrvgrp]
+vproapp ansible_host=192.168.3.72 
+
+[sgrp]
+nexus ansible_host=192.168.3.71 
+jenkins ansible_host=192.168.3.70 
+
+[datacentr:children]
+appsrvgrp
+sgrp
+
+
+[datacentr:vars]
+ansible_user=vagrant
+ansible_password=vagrant
+

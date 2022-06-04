@@ -1,0 +1,444 @@
+2022-06-04 08:13:36,976 p=2330 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 08:13:36,999 p=2330 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 08:13:38,271 p=2330 u=vagrant n=ansible | [DEPRECATION WARNING]: Distribution Ubuntu 18.04 on host vproapp should use /usr/bin/python3, but is using /usr/bin/python
+ for backward compatibility with prior Ansible releases. A future Ansible release will default to using the discovered 
+platform python for this host. See https://docs.ansible.com/ansible/2.9/reference_appendices/interpreter_discovery.html 
+for more information. This feature will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-06-04 08:13:38,272 p=2330 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 08:13:38,290 p=2330 u=vagrant n=ansible | TASK [Include vars] *******************************************************************************************************
+2022-06-04 08:13:38,308 p=2330 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"msg": "dis is not a valid option in include_vars"}
+2022-06-04 08:13:38,312 p=2330 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 08:13:38,313 p=2330 u=vagrant n=ansible | vproapp                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 08:14:40,390 p=2364 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 08:14:40,407 p=2364 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 08:14:41,663 p=2364 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 08:14:41,682 p=2364 u=vagrant n=ansible | TASK [Include vars] *******************************************************************************************************
+2022-06-04 08:14:41,702 p=2364 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"msg": "dis is not a valid option in include_vars"}
+2022-06-04 08:14:41,704 p=2364 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 08:14:41,705 p=2364 u=vagrant n=ansible | vproapp                    : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 09:19:27,369 p=2489 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 09:19:27,386 p=2489 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 09:19:28,673 p=2489 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 09:19:28,691 p=2489 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 09:19:29,083 p=2489 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 09:19:29,101 p=2489 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 09:19:29,171 p=2489 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": false, "msg": "Could not find or access 'templates/docker-compose.j2'\nSearched in:\n\t/home/vagrant/ansible/project1/templates/docker-compose.j2\n\t/home/vagrant/ansible/project1/templates/docker-compose.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2022-06-04 09:19:29,174 p=2489 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 09:19:29,175 p=2489 u=vagrant n=ansible | vproapp                    : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 09:42:17,057 p=2583 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 09:42:17,099 p=2583 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 09:42:18,512 p=2583 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 09:42:18,530 p=2583 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 09:42:18,965 p=2583 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 09:42:18,983 p=2583 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 09:42:19,081 p=2583 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'nexus_host' is undefined"}
+2022-06-04 09:42:19,084 p=2583 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 09:42:19,085 p=2583 u=vagrant n=ansible | vproapp                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 12:20:10,123 p=2664 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 12:20:10,140 p=2664 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 12:20:11,433 p=2664 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:20:11,451 p=2664 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 12:20:11,864 p=2664 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:20:11,882 p=2664 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 12:20:12,666 p=2664 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 12:20:12,684 p=2664 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 12:20:13,450 p=2664 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.367423", "end": "2022-06-04 12:20:13.418723", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 12:20:13.051300", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 12:20:13,451 p=2664 u=vagrant n=ansible | ...ignoring
+2022-06-04 12:20:13,467 p=2664 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 12:20:13,751 p=2664 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 12:20:13,775 p=2664 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 12:20:14,327 p=2664 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.313979", "end": "2022-06-04 12:20:14.297054", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 12:20:13.983075", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 12:20:14,331 p=2664 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 12:20:14,332 p=2664 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 12:33:35,671 p=2802 u=vagrant n=ansible | playbook: vproapp-container-setup.yml
+2022-06-04 12:33:35,673 p=2802 u=vagrant n=ansible |   play #1 (appsrvgrp): Deploy containers	TAGS: []
+2022-06-04 12:33:35,679 p=2802 u=vagrant n=ansible |     tasks:
+      Create remote temp dir	TAGS: []
+      Copy Docker Compose files	TAGS: []
+      Stop all docker containers	TAGS: [docker-cleanup]
+      Remove all unused and dangling docker images	TAGS: [docker-cleanup]
+      Setup with docker-compose	TAGS: [container-setup]
+      Display result	TAGS: []
+
+2022-06-04 12:36:02,051 p=2808 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 12:36:02,069 p=2808 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 12:36:03,347 p=2808 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:36:03,366 p=2808 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 12:36:03,758 p=2808 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:36:03,776 p=2808 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 12:36:04,371 p=2808 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:36:04,390 p=2808 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 12:36:04,839 p=2808 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.060132", "end": "2022-06-04 12:36:04.808278", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 12:36:04.748146", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 12:36:04,840 p=2808 u=vagrant n=ansible | ...ignoring
+2022-06-04 12:36:04,859 p=2808 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 12:36:05,127 p=2808 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 12:36:05,143 p=2808 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 12:36:05,450 p=2808 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.066430", "end": "2022-06-04 12:36:05.420374", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 12:36:05.353944", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 12:36:05,454 p=2808 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 12:36:05,455 p=2808 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 12:43:10,271 p=3358 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 12:43:10,289 p=3358 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 12:43:11,555 p=3358 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:43:11,572 p=3358 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 12:43:11,976 p=3358 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:43:11,995 p=3358 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 12:43:12,574 p=3358 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 12:43:12,593 p=3358 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 12:43:13,049 p=3358 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.058000", "end": "2022-06-04 12:43:13.019441", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 12:43:12.961441", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 12:43:13,053 p=3358 u=vagrant n=ansible | ...ignoring
+2022-06-04 12:43:13,069 p=3358 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 12:43:13,340 p=3358 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 12:43:13,359 p=3358 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 12:43:13,666 p=3358 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.060387", "end": "2022-06-04 12:43:13.634913", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 12:43:13.574526", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 12:43:13,670 p=3358 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 12:43:13,671 p=3358 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 16:23:09,410 p=3548 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 16:23:09,431 p=3548 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 16:23:11,478 p=3548 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:23:11,505 p=3548 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 16:23:11,937 p=3548 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:23:11,955 p=3548 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 16:23:12,760 p=3548 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:23:12,783 p=3548 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 16:23:13,204 p=3548 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.057328", "end": "2022-06-04 16:23:13.176421", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 16:23:13.119093", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:23:13,205 p=3548 u=vagrant n=ansible | ...ignoring
+2022-06-04 16:23:13,223 p=3548 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 16:23:13,503 p=3548 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:23:13,521 p=3548 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 16:23:13,826 p=3548 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.060709", "end": "2022-06-04 16:23:13.795356", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 16:23:13.734647", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:23:13,829 p=3548 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 16:23:13,830 p=3548 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 16:25:50,896 p=3674 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 16:25:50,914 p=3674 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 16:25:52,179 p=3674 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:25:52,197 p=3674 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 16:25:52,610 p=3674 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:25:52,629 p=3674 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 16:25:53,220 p=3674 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:25:53,241 p=3674 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 16:25:53,722 p=3674 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.064084", "end": "2022-06-04 16:25:53.667206", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 16:25:53.603122", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:25:53,723 p=3674 u=vagrant n=ansible | ...ignoring
+2022-06-04 16:25:53,750 p=3674 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 16:25:54,026 p=3674 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:25:54,043 p=3674 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 16:25:54,348 p=3674 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.060511", "end": "2022-06-04 16:25:54.318219", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 16:25:54.257708", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:25:54,351 p=3674 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 16:25:54,352 p=3674 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 16:31:39,014 p=3796 u=vagrant n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: ping
+
+2022-06-04 16:31:39,015 p=3796 u=vagrant n=ansible | [WARNING]: No hosts matched, nothing to do
+
+2022-06-04 16:31:39,046 p=3796 u=vagrant n=ansible | ERROR! No argument passed to command module
+2022-06-04 16:32:28,851 p=3799 u=vagrant n=ansible | ERROR! No argument passed to command module
+2022-06-04 16:34:03,188 p=3804 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 16:34:03,207 p=3804 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 16:34:04,578 p=3804 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:34:04,598 p=3804 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 16:34:05,014 p=3804 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:34:05,034 p=3804 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 16:34:05,642 p=3804 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:34:05,659 p=3804 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 16:34:06,106 p=3804 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.058496", "end": "2022-06-04 16:34:06.075741", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 16:34:06.017245", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:34:06,107 p=3804 u=vagrant n=ansible | ...ignoring
+2022-06-04 16:34:06,126 p=3804 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 16:34:06,432 p=3804 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:34:06,457 p=3804 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 16:34:06,804 p=3804 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.076652", "end": "2022-06-04 16:34:06.771967", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 16:34:06.695315", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:34:06,806 p=3804 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 16:34:06,807 p=3804 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 16:34:50,089 p=3922 u=vagrant n=ansible | vproapp | CHANGED | rc=0 >>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+2022-06-04 16:34:50,621 p=3922 u=vagrant n=ansible | nexus | FAILED | rc=127 >>
+/bin/sh: docker: command not foundnon-zero return code
+
+2022-06-04 16:34:51,112 p=3922 u=vagrant n=ansible | jenkins | CHANGED | rc=0 >>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+2022-06-04 16:35:25,500 p=4061 u=vagrant n=ansible | vproapp | CHANGED | rc=0 >>
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+2022-06-04 16:35:36,337 p=4089 u=vagrant n=ansible | vproapp | CHANGED | rc=0 >>
+
+
+2022-06-04 16:35:53,696 p=4122 u=vagrant n=ansible | vproapp | FAILED | rc=1 >>
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containersnon-zero return code
+
+2022-06-04 16:41:31,087 p=4156 u=vagrant n=ansible | vproapp | FAILED | rc=1 >>
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containersnon-zero return code
+
+2022-06-04 16:44:20,761 p=4192 u=vagrant n=ansible | vproapp | FAILED | rc=1 >>
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containersnon-zero return code
+
+2022-06-04 16:45:29,403 p=4230 u=vagrant n=ansible | vproapp | FAILED | rc=1 >>
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containersnon-zero return code
+
+2022-06-04 16:46:20,324 p=4261 u=vagrant n=ansible | vproapp | FAILED | rc=1 >>
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containersnon-zero return code
+
+2022-06-04 16:48:02,386 p=4289 u=vagrant n=ansible | vproapp | FAILED | rc=1 >>
+"docker stop" requires at least 1 argument.
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containersnon-zero return code
+
+2022-06-04 16:48:55,806 p=4323 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 16:48:55,824 p=4323 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 16:48:56,882 p=4323 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:48:56,901 p=4323 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 16:48:57,314 p=4323 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:48:57,333 p=4323 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 16:48:57,934 p=4323 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:48:57,954 p=4323 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 16:48:58,404 p=4323 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker stop $(docker ps -q)", "delta": "0:00:00.056356", "end": "2022-06-04 16:48:58.375410", "msg": "non-zero return code", "rc": 1, "start": "2022-06-04 16:48:58.319054", "stderr": "\"docker stop\" requires at least 1 argument.\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument.", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:48:58,405 p=4323 u=vagrant n=ansible | ...ignoring
+2022-06-04 16:48:58,424 p=4323 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 16:48:58,698 p=4323 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:48:58,716 p=4323 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 16:48:59,022 p=4323 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.060988", "end": "2022-06-04 16:48:58.993024", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 16:48:58.932036", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:48:59,026 p=4323 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 16:48:59,027 p=4323 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=1   
+2022-06-04 16:53:58,513 p=4449 u=vagrant n=ansible | vproapp | CHANGED | rc=0 >>
+
+
+2022-06-04 16:55:37,609 p=4483 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 16:55:37,627 p=4483 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 16:55:38,875 p=4483 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:55:38,893 p=4483 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 16:55:39,306 p=4483 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:55:39,325 p=4483 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 16:55:39,915 p=4483 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 16:55:39,933 p=4483 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 16:55:40,362 p=4483 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:55:40,405 p=4483 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 16:55:40,701 p=4483 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 16:55:40,719 p=4483 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 16:55:41,051 p=4483 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.079053", "end": "2022-06-04 16:55:41.018345", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 16:55:40.939292", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 16:55:41,054 p=4483 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 16:55:41,055 p=4483 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 16:56:35,696 p=4602 u=vagrant n=ansible | vproapp | FAILED | rc=14 >>
+no configuration file provided: not foundnon-zero return code
+
+2022-06-04 17:04:59,715 p=4636 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:04:59,732 p=4636 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:05:00,971 p=4636 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:05:00,989 p=4636 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:05:01,398 p=4636 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:05:01,416 p=4636 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:05:02,008 p=4636 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:05:02,027 p=4636 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:05:02,442 p=4636 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:05:02,470 p=4636 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:05:02,800 p=4636 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:05:02,818 p=4636 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:05:03,128 p=4636 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.060554", "end": "2022-06-04 17:05:03.095918", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:05:03.035364", "stderr": "yaml: line 13: did not find expected '-' indicator", "stderr_lines": ["yaml: line 13: did not find expected '-' indicator"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:05:03,130 p=4636 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:05:03,132 p=4636 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:07:27,399 p=4761 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:07:27,428 p=4761 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:07:28,658 p=4761 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:07:28,677 p=4761 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:07:29,096 p=4761 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:07:29,117 p=4761 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:07:29,907 p=4761 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:07:29,928 p=4761 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:07:30,349 p=4761 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:07:30,369 p=4761 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:07:30,646 p=4761 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:07:30,663 p=4761 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:07:30,979 p=4761 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.073669", "end": "2022-06-04 17:07:30.949099", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:07:30.875430", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:07:30,983 p=4761 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:07:30,984 p=4761 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:07:50,427 p=4884 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:07:50,445 p=4884 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:07:51,505 p=4884 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:07:51,534 p=4884 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:07:51,941 p=4884 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:07:51,970 p=4884 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:07:52,559 p=4884 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:07:52,586 p=4884 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:07:53,021 p=4884 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:07:53,044 p=4884 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:07:53,318 p=4884 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:07:53,336 p=4884 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:07:53,652 p=4884 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.070307", "end": "2022-06-04 17:07:53.621774", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:07:53.551467", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:07:53,656 p=4884 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:07:53,657 p=4884 u=vagrant n=ansible | vproapp                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:43:42,395 p=5019 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:43:42,413 p=5019 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:43:43,681 p=5019 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:43:43,699 p=5019 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:43:44,118 p=5019 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:43:44,137 p=5019 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:43:44,915 p=5019 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:43:44,934 p=5019 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:43:45,368 p=5019 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:43:45,386 p=5019 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:43:45,663 p=5019 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:43:45,688 p=5019 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:43:46,000 p=5019 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.067256", "end": "2022-06-04 17:43:45.968509", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:43:45.901253", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:43:46,004 p=5019 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:43:46,005 p=5019 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:47:34,765 p=5143 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:47:34,783 p=5143 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:47:36,010 p=5143 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:47:36,029 p=5143 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:47:36,432 p=5143 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:47:36,460 p=5143 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:47:37,288 p=5143 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:47:37,314 p=5143 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:47:37,734 p=5143 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:47:37,751 p=5143 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:47:38,030 p=5143 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:47:38,055 p=5143 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:47:38,381 p=5143 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.068569", "end": "2022-06-04 17:47:38.349148", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:47:38.280579", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:47:38,385 p=5143 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:47:38,386 p=5143 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:54:32,202 p=5274 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:54:32,239 p=5274 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:54:34,913 p=5274 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:54:34,956 p=5274 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:54:35,925 p=5274 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:54:35,968 p=5274 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:54:37,770 p=5274 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:54:37,810 p=5274 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:54:38,684 p=5274 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:54:38,724 p=5274 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:54:39,337 p=5274 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:54:39,374 p=5274 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:54:40,078 p=5274 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.156851", "end": "2022-06-04 17:54:40.010115", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:54:39.853264", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:54:40,081 p=5274 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:54:40,083 p=5274 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:57:42,607 p=5400 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:57:42,645 p=5400 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:57:45,210 p=5400 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:57:45,249 p=5400 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:57:46,190 p=5400 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:57:46,231 p=5400 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:57:47,957 p=5400 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:57:47,995 p=5400 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:57:48,879 p=5400 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:57:48,922 p=5400 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:57:49,519 p=5400 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:57:49,559 p=5400 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:57:50,248 p=5400 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.155596", "end": "2022-06-04 17:57:50.179984", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:57:50.024388", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:57:50,251 p=5400 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:57:50,253 p=5400 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 17:59:40,397 p=5524 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 17:59:40,439 p=5524 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 17:59:43,370 p=5524 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:59:43,415 p=5524 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 17:59:44,471 p=5524 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 17:59:44,512 p=5524 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 17:59:46,482 p=5524 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:59:46,523 p=5524 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 17:59:47,521 p=5524 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:59:47,565 p=5524 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 17:59:48,255 p=5524 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 17:59:48,298 p=5524 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 17:59:49,086 p=5524 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.175899", "end": "2022-06-04 17:59:49.007966", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 17:59:48.832067", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 17:59:49,089 p=5524 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 17:59:49,090 p=5524 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 18:21:00,493 p=5661 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 18:21:00,531 p=5661 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 18:21:03,074 p=5661 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:21:03,120 p=5661 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 18:21:04,105 p=5661 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:21:04,148 p=5661 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 18:21:05,877 p=5661 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:21:05,920 p=5661 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 18:21:06,782 p=5661 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:21:06,822 p=5661 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 18:21:07,431 p=5661 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:21:07,468 p=5661 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 18:21:08,161 p=5661 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.158473", "end": "2022-06-04 18:21:08.224856", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 18:21:08.066383", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 18:21:08,165 p=5661 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 18:21:08,166 p=5661 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 18:30:03,375 p=5789 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 18:30:03,412 p=5789 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 18:30:05,939 p=5789 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:30:05,977 p=5789 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 18:30:06,922 p=5789 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:30:06,962 p=5789 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 18:30:08,674 p=5789 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:30:08,714 p=5789 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 18:30:09,584 p=5789 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:30:09,624 p=5789 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 18:30:10,213 p=5789 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:30:10,250 p=5789 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 18:30:10,938 p=5789 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.155396", "end": "2022-06-04 18:30:11.001356", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 18:30:10.845960", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 18:30:10,941 p=5789 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 18:30:10,942 p=5789 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 18:34:59,980 p=5913 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 18:35:00,018 p=5913 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 18:35:02,676 p=5913 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:35:02,717 p=5913 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 18:35:03,706 p=5913 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:35:03,746 p=5913 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 18:35:05,505 p=5913 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:35:05,545 p=5913 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 18:35:06,421 p=5913 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:35:06,457 p=5913 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 18:35:07,074 p=5913 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:35:07,112 p=5913 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 18:35:07,824 p=5913 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.156092", "end": "2022-06-04 18:35:07.877985", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 18:35:07.721893", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 18:35:07,828 p=5913 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 18:35:07,829 p=5913 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 18:45:40,024 p=6040 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 18:45:40,082 p=6040 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 18:45:43,101 p=6040 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:45:43,142 p=6040 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 18:45:44,235 p=6040 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:45:44,274 p=6040 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 18:45:46,271 p=6040 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:45:46,325 p=6040 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 18:45:47,313 p=6040 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:45:47,360 p=6040 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 18:45:48,093 p=6040 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:45:48,134 p=6040 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 18:45:49,002 p=6040 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.197076", "end": "2022-06-04 18:45:49.032410", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 18:45:48.835334", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 18:45:49,006 p=6040 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 18:45:49,007 p=6040 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-04 18:48:30,352 p=6165 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-04 18:48:30,423 p=6165 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-04 18:48:37,051 p=6165 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:48:37,122 p=6165 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-04 18:48:39,093 p=6165 u=vagrant n=ansible | ok: [vproapp]
+2022-06-04 18:48:39,168 p=6165 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-04 18:48:43,480 p=6165 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:48:43,533 p=6165 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-04 18:48:45,290 p=6165 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:48:45,349 p=6165 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-04 18:48:46,579 p=6165 u=vagrant n=ansible | changed: [vproapp]
+2022-06-04 18:48:46,634 p=6165 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-04 18:48:48,034 p=6165 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.345329", "end": "2022-06-04 18:48:48.037143", "msg": "non-zero return code", "rc": 15, "start": "2022-06-04 18:48:47.691814", "stderr": "service \"vprodb\" refers to undefined volume vprobdata: invalid compose project", "stderr_lines": ["service \"vprodb\" refers to undefined volume vprobdata: invalid compose project"], "stdout": "", "stdout_lines": []}
+2022-06-04 18:48:48,039 p=6165 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-04 18:48:48,071 p=6165 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
