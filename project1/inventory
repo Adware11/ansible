@@ -9,8 +9,6 @@ jenkins ansible_host=192.168.3.70
 appsrvgrp
 sgrp
 
-
-[datacentr:vars]
-ansible_user=vagrant
-ansible_password=vagrant
-
+#[datacentr:vars]
+#ansible_user = 
+#ansible_password = 

@@ -611,3 +611,204 @@ no configuration file provided: not foundnon-zero return code
 }
 2022-06-04 19:48:50,445 p=7891 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
 2022-06-04 19:48:50,445 p=7891 u=vagrant n=ansible | vproapp                    : ok=7    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 06:35:14,856 p=8391 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 06:35:14,875 p=8391 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 06:35:15,015 p=8391 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 06:35:15,018 p=8391 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 06:35:15,019 p=8391 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 06:36:57,077 p=8403 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 06:36:57,097 p=8403 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 06:36:58,563 p=8403 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 06:36:58,582 p=8403 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-05 06:36:59,000 p=8403 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 06:36:59,019 p=8403 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-05 06:36:59,857 p=8403 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 06:36:59,903 p=8403 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-05 06:37:00,451 p=8403 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 06:37:00,469 p=8403 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-05 06:37:01,755 p=8403 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 06:37:01,776 p=8403 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-05 06:37:02,116 p=8403 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:00.095484", "end": "2022-06-05 06:37:02.084229", "msg": "non-zero return code", "rc": 15, "start": "2022-06-05 06:37:01.988745", "stderr": "yaml: line 5: mapping values are not allowed in this context", "stderr_lines": ["yaml: line 5: mapping values are not allowed in this context"], "stdout": "", "stdout_lines": []}
+2022-06-05 06:37:02,120 p=8403 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 06:37:02,121 p=8403 u=vagrant n=ansible | vproapp                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-05 06:46:44,566 p=8553 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/vagrant/ansible/project1/vproapp-container-setup.yml': line 5, column 25, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - name: Include vars:
+                        ^ here
+
+2022-06-05 06:47:17,015 p=8567 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 06:47:17,033 p=8567 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 06:47:18,269 p=8567 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 06:47:18,292 p=8567 u=vagrant n=ansible | TASK [Include vars] *******************************************************************************************************
+2022-06-05 06:47:18,310 p=8567 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 06:47:18,329 p=8567 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-05 06:47:18,731 p=8567 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 06:47:18,750 p=8567 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-05 06:47:19,570 p=8567 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 06:47:19,589 p=8567 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-05 06:47:20,030 p=8567 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 06:47:20,051 p=8567 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-05 06:47:20,350 p=8567 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 06:47:20,367 p=8567 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-05 06:47:30,754 p=8567 u=vagrant n=ansible | fatal: [vproapp]: FAILED! => {"changed": true, "cmd": "docker compose up -d", "delta": "0:00:10.140638", "end": "2022-06-05 06:47:30.717354", "msg": "non-zero return code", "rc": 18, "start": "2022-06-05 06:47:20.576716", "stderr": "vproapp Pulling \nvproweb Pulling \nvprodb Pulling \nvprocache01 Pulling \nvpromq01 Pulling \nvproweb Error \nvproapp Error \nvpromq01 Error \nvprocache01 Error \nvprodb Error \nError response from daemon: Get \"https://registry-1.docker.io/v2/\": dial tcp: lookup registry-1.docker.io: Temporary failure in name resolution", "stderr_lines": ["vproapp Pulling ", "vproweb Pulling ", "vprodb Pulling ", "vprocache01 Pulling ", "vpromq01 Pulling ", "vproweb Error ", "vproapp Error ", "vpromq01 Error ", "vprocache01 Error ", "vprodb Error ", "Error response from daemon: Get \"https://registry-1.docker.io/v2/\": dial tcp: lookup registry-1.docker.io: Temporary failure in name resolution"], "stdout": "", "stdout_lines": []}
+2022-06-05 06:47:30,758 p=8567 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 06:47:30,759 p=8567 u=vagrant n=ansible | vproapp                    : ok=6    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-06-05 07:01:25,565 p=8705 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 07:01:25,585 p=8705 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 07:01:25,679 p=8705 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 07:01:25,681 p=8705 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 07:01:25,682 p=8705 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 07:58:47,333 p=9152 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 07:58:47,351 p=9152 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 07:58:47,454 p=9152 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 07:58:47,457 p=9152 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 07:58:47,458 p=9152 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 08:04:39,447 p=9163 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:04:39,465 p=9163 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 08:04:39,558 p=9163 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 08:04:39,561 p=9163 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:04:39,562 p=9163 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 08:08:45,260 p=9192 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:08:45,278 p=9192 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 08:08:45,371 p=9192 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 08:08:45,374 p=9192 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:08:45,375 p=9192 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 08:17:23,883 p=9210 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/inventory with yaml plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: No JSON object could be decoded  Syntax Error while loading
+YAML.   did not find expected <document start>  The error appears to be in '/home/vagrant/ansible/project1/inventory':
+line 2, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to
+be:  [appsrvgrp] vproapp ansible_host=192.168.3.72 ^ here
+
+2022-06-05 08:17:23,885 p=9210 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/inventory with ini plugin:
+/home/vagrant/ansible/project1/inventory:13: Expected key=value, got: vault.yml
+
+2022-06-05 08:17:23,886 p=9210 u=vagrant n=ansible | [WARNING]: Unable to parse /home/vagrant/ansible/project1/inventory as an inventory source
+
+2022-06-05 08:17:23,887 p=9210 u=vagrant n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-06-05 08:17:23,889 p=9210 u=vagrant n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+
+2022-06-05 08:17:24,192 p=9210 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:17:24,211 p=9210 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 08:17:24,307 p=9210 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 08:17:24,310 p=9210 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:17:24,311 p=9210 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 08:29:46,899 p=9247 u=vagrant n=ansible | Encryption successful
+2022-06-05 08:29:56,710 p=9251 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/vault_inv with yaml plugin: YAML inventory has invalid
+structure, it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2022-06-05 08:29:56,711 p=9251 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/vault_inv with ini plugin:
+/home/vagrant/ansible/project1/vault_inv:1: Expected key=value host variable assignment, got: vagrant
+
+2022-06-05 08:29:56,712 p=9251 u=vagrant n=ansible | [WARNING]: Unable to parse /home/vagrant/ansible/project1/vault_inv as an inventory source
+
+2022-06-05 08:29:56,713 p=9251 u=vagrant n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-06-05 08:29:56,715 p=9251 u=vagrant n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+
+2022-06-05 08:29:57,013 p=9251 u=vagrant n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: appsrvgrp
+
+2022-06-05 08:29:57,015 p=9251 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:29:57,016 p=9251 u=vagrant n=ansible | skipping: no hosts matched
+2022-06-05 08:29:57,017 p=9251 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:35:03,032 p=9270 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/vault_inv with yaml plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: No JSON object could be decoded  Syntax Error while loading
+YAML.   found unexpected ':'  The error appears to be in '/home/vagrant/ansible/project1/vault_inv': line 1, column 11,
+but may be elsewhere in the file depending on the exact syntax problem.
+
+2022-06-05 08:35:03,034 p=9270 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/vault_inv with ini plugin:
+/home/vagrant/ansible/project1/vault_inv:1: Section [datacentr:vars] not valid for undefined group: datacentr
+
+2022-06-05 08:35:03,035 p=9270 u=vagrant n=ansible | [WARNING]: Unable to parse /home/vagrant/ansible/project1/vault_inv as an inventory source
+
+2022-06-05 08:35:03,036 p=9270 u=vagrant n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-06-05 08:35:03,037 p=9270 u=vagrant n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+
+2022-06-05 08:35:03,336 p=9270 u=vagrant n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: appsrvgrp
+
+2022-06-05 08:35:03,338 p=9270 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:35:03,339 p=9270 u=vagrant n=ansible | skipping: no hosts matched
+2022-06-05 08:35:03,340 p=9270 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:40:25,609 p=9303 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:40:25,626 p=9303 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 08:40:27,186 p=9303 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 08:40:27,206 p=9303 u=vagrant n=ansible | TASK [Include vars] *******************************************************************************************************
+2022-06-05 08:40:27,254 p=9303 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 08:40:27,272 p=9303 u=vagrant n=ansible | TASK [Create remote temp dir] *********************************************************************************************
+2022-06-05 08:40:27,692 p=9303 u=vagrant n=ansible | ok: [vproapp]
+2022-06-05 08:40:27,712 p=9303 u=vagrant n=ansible | TASK [Copy Docker Compose files] ******************************************************************************************
+2022-06-05 08:40:28,554 p=9303 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 08:40:28,575 p=9303 u=vagrant n=ansible | TASK [Stop all docker containers] *****************************************************************************************
+2022-06-05 08:40:29,250 p=9303 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 08:40:29,270 p=9303 u=vagrant n=ansible | TASK [Remove all unused and dangling docker images] ***********************************************************************
+2022-06-05 08:40:29,617 p=9303 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 08:40:29,638 p=9303 u=vagrant n=ansible | TASK [Setup with docker-compose] ******************************************************************************************
+2022-06-05 08:40:30,156 p=9303 u=vagrant n=ansible | changed: [vproapp]
+2022-06-05 08:40:30,177 p=9303 u=vagrant n=ansible | TASK [Display result] *****************************************************************************************************
+2022-06-05 08:40:30,208 p=9303 u=vagrant n=ansible | ok: [vproapp] => {
+    "msg": "Log from docker-compose: \n {'stderr_lines': [u'Container vproapp-vproweb-1  Running', u'Container vproapp-vprodb-1  Running', u'Container vproapp-vprocache01-1  Running', u'Container vproapp-vpromq01-1  Running', u'Container vproapp-vproapp-1  Running'], u'changed': True, u'end': u'2022-06-05 08:40:30.117673', 'failed': False, u'stdout': u'', u'cmd': u'docker compose up -d', u'rc': 0, u'start': u'2022-06-05 08:40:29.866888', u'stderr': u'Container vproapp-vproweb-1  Running\\nContainer vproapp-vprodb-1  Running\\nContainer vproapp-vprocache01-1  Running\\nContainer vproapp-vpromq01-1  Running\\nContainer vproapp-vproapp-1  Running', u'delta': u'0:00:00.250785', 'stdout_lines': []}\n"
+}
+2022-06-05 08:40:30,212 p=9303 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:40:30,214 p=9303 u=vagrant n=ansible | vproapp                    : ok=8    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 08:47:51,837 p=9436 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 08:47:51,855 p=9436 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 08:47:51,951 p=9436 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 08:47:51,953 p=9436 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 08:47:51,954 p=9436 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 09:02:20,391 p=9455 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 09:02:20,408 p=9455 u=vagrant n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: No JSON object could be decoded
+
+Syntax Error while loading YAML.
+  found unexpected ':'
+
+The error appears to be in '/home/vagrant/ansible/project1/group_vars/all': line 6, column 11, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+[datacentr:vars]
+          ^ here
+
+2022-06-05 09:07:33,195 p=9478 u=vagrant n=ansible | Encryption successful
+2022-06-05 09:08:19,496 p=9482 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/inventory with yaml plugin: We were unable to read either as
+JSON nor YAML, these are the errors we got from each: JSON: No JSON object could be decoded  Syntax Error while loading
+YAML.   did not find expected <document start>  The error appears to be in '/home/vagrant/ansible/project1/inventory':
+line 2, column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line appears to
+be:  [appsrvgrp] vproapp ansible_host=192.168.3.72 ^ here
+
+2022-06-05 09:08:19,498 p=9482 u=vagrant n=ansible | [WARNING]:  * Failed to parse /home/vagrant/ansible/project1/inventory with ini plugin:
+/home/vagrant/ansible/project1/inventory:15: Expected key=value, got: $ANSIBLE_VAULT;1.1;AES256
+
+2022-06-05 09:08:19,500 p=9482 u=vagrant n=ansible | [WARNING]: Unable to parse /home/vagrant/ansible/project1/inventory as an inventory source
+
+2022-06-05 09:08:19,501 p=9482 u=vagrant n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2022-06-05 09:08:19,502 p=9482 u=vagrant n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+
+2022-06-05 09:08:19,801 p=9482 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 09:08:19,819 p=9482 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 09:08:22,026 p=9482 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Invalid/incorrect password: Permission denied, please try again.", "unreachable": true}
+2022-06-05 09:08:22,029 p=9482 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 09:08:22,030 p=9482 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-05 09:18:38,417 p=9500 u=vagrant n=ansible | PLAY [Deploy containers] **************************************************************************************************
+2022-06-05 09:18:38,461 p=9500 u=vagrant n=ansible | TASK [Gathering Facts] ****************************************************************************************************
+2022-06-05 09:18:38,641 p=9500 u=vagrant n=ansible | fatal: [vproapp]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: vagrant@192.168.3.72: Permission denied (publickey,password).", "unreachable": true}
+2022-06-05 09:18:38,644 p=9500 u=vagrant n=ansible | PLAY RECAP ****************************************************************************************************************
+2022-06-05 09:18:38,646 p=9500 u=vagrant n=ansible | vproapp                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   

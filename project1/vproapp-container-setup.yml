@@ -2,6 +2,9 @@
   hosts: appsrvgrp #// Группа, которую нужно будет прописать в Inventory
   become: yes
   tasks:
+    - name: Include vars
+      include_vars:
+        dir: vars
     - name: Create remote temp dir #// Создать папку для временных файлов на целевой машине
       file:
         path: /tmp/vproapp
