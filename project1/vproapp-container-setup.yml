@@ -16,7 +16,7 @@
 
     - name: Stop all docker containers #// Останавливаем все докер-контейнеры
       shell:
-        cmd: docker ps -aq
+        cmd: docker stop $(docker ps -q)
       ignore_errors: true
       tags:
         - docker-cleanup
